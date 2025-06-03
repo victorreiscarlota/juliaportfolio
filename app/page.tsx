@@ -91,7 +91,7 @@ export default function Component() {
   }, [lastScrollY])
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5511999999999", "_blank")
+    window.open("https://wa.me/553198197048", "_blank")
   }
 
   const isVisible = (sectionId: string) => visibleSections.has(sectionId)
@@ -506,7 +506,7 @@ export default function Component() {
                       </h4>
                       <p className="text-pewter/70 dark:text-dark-pewter/70 transition-colors duration-300">
                         <LinkPreview
-                          url="https://wa.me/5511999999999"
+                          url="https://wa.me/553198197048"
                           isStatic
                           imageSrc="/placeholder.svg?height=125&width=200"
                         >
