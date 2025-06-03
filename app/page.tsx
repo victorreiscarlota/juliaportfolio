@@ -8,6 +8,7 @@ import { useEffect, useState, useRef } from "react"
 import { Menu, MenuItem, HoveredLink } from "@/components/animated-menu"
 import { LinkPreview } from "@/components/link-preview"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { MobileHamburgerMenu } from "@/components/mobile-hamburger-menu"
 
 export default function Component() {
   const [active, setActive] = useState<string | null>(null)
@@ -19,6 +20,36 @@ export default function Component() {
   const aboutRef = useRef<HTMLElement>(null)
   const servicesRef = useRef<HTMLElement>(null)
   const contactRef = useRef<HTMLElement>(null)
+
+  const menuItems = [
+    {
+      title: "Sobre mim",
+      href: "#sobre",
+      subitems: [
+        { title: "Minha História", href: "#sobre" },
+        { title: "Formação", href: "#sobre" },
+        { title: "Experiência", href: "#sobre" },
+      ],
+    },
+    {
+      title: "Atuação",
+      href: "#atuacao",
+      subitems: [
+        { title: "Terapia Individual", href: "#atuacao" },
+        { title: "Terapia de Casal", href: "#atuacao" },
+        { title: "Avaliação Psicológica", href: "#atuacao" },
+      ],
+    },
+    {
+      title: "Atendimento",
+      href: "#atendimento",
+      subitems: [
+        { title: "Horários", href: "#atendimento" },
+        { title: "Localização", href: "#atendimento" },
+        { title: "Contato", href: "#atendimento" },
+      ],
+    },
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,15 +106,21 @@ export default function Component() {
       >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
-            {/* Name */}
-            <div
-              className="text-3xl font-light text-pewter dark:text-dark-pewter drop-shadow-sm transition-colors duration-300"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              Júlia Penido
+            {/* Desktop Name / Mobile Hamburger */}
+            <div className="flex items-center">
+              {/* Desktop Name */}
+              <div
+                className="hidden md:block text-3xl font-light text-pewter dark:text-dark-pewter drop-shadow-sm transition-colors duration-300"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
+                Júlia Penido
+              </div>
+
+              {/* Mobile Hamburger Menu */}
+              <MobileHamburgerMenu items={menuItems} />
             </div>
 
-            {/* Navigation Menu - Centered */}
+            {/* Navigation Menu - Desktop Only */}
             <div className="hidden md:block">
               <Menu setActive={setActive}>
                 <MenuItem setActive={setActive} active={active} item="Sobre mim">
