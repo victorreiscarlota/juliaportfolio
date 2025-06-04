@@ -31,10 +31,10 @@ export function Preloader() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="fixed inset-0 z-[9999] bg-pearl dark:bg-dark-pearl flex flex-col items-center justify-center"
+                    className="fixed inset-0 z-[9999] bg-pearl dark:bg-dark-pearl flex flex-col items-center justify-center min-h-screen"
                 >
                     {/* Main Logo Animation */}
-                    <div className="relative mb-8">
+                    <div className="relative mb-8 flex items-center justify-center">
                         {/* Outer Ring */}
                         <motion.div
                             initial={{ scale: 0, rotate: 0 }}
@@ -43,7 +43,7 @@ export function Preloader() {
                                 scale: { duration: 1, ease: "easeOut" },
                                 rotate: { duration: 2, ease: "linear", repeat: Number.POSITIVE_INFINITY },
                             }}
-                            className="w-24 h-24 border-2 border-salmon/30 dark:border-dark-salmon/30 rounded-full absolute inset-0"
+                            className="w-24 h-24 border-2 border-salmon/30 dark:border-dark-salmon/30 rounded-full absolute"
                         />
 
                         {/* Inner Ring */}
@@ -54,7 +54,7 @@ export function Preloader() {
                                 scale: { duration: 1, delay: 0.2, ease: "easeOut" },
                                 rotate: { duration: 3, ease: "linear", repeat: Number.POSITIVE_INFINITY },
                             }}
-                            className="w-16 h-16 border-2 border-sandstone/50 dark:border-dark-sandstone/50 rounded-full absolute inset-4"
+                            className="w-16 h-16 border-2 border-sandstone/50 dark:border-dark-sandstone/50 rounded-full absolute"
                         />
 
                         {/* Center Circle with Initials */}
@@ -62,7 +62,7 @@ export function Preloader() {
                             initial={{ scale: 0, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                            className="w-12 h-12 bg-salmon dark:bg-dark-salmon rounded-full absolute inset-6 flex items-center justify-center"
+                            className="w-12 h-12 bg-salmon dark:bg-dark-salmon rounded-full flex items-center justify-center"
                         >
                             <motion.span
                                 initial={{ opacity: 0, y: 10 }}
@@ -118,7 +118,7 @@ export function Preloader() {
                         initial={{ opacity: 0, width: 0 }}
                         animate={{ opacity: 1, width: "200px" }}
                         transition={{ duration: 0.8, delay: 2 }}
-                        className="relative h-1 bg-sandstone/30 dark:bg-dark-sandstone/30 rounded-full overflow-hidden"
+                        className="relative h-1 bg-sandstone/30 dark:bg-dark-sandstone/30 rounded-full overflow-hidden mx-auto"
                     >
                         <motion.div
                             initial={{ width: "0%" }}
@@ -165,6 +165,7 @@ export function Preloader() {
                             style={{
                                 left: "50%",
                                 top: "50%",
+                                transform: "translate(-50%, -50%)",
                             }}
                         />
                     ))}
