@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Júlia Penido - Psicóloga Clínica",
   description: "Psicóloga especialista em terapia cognitivo-comportamental",
-    generator: 'v0.dev'
+    generator: 'victor'
 }
 
 export default function RootLayout({
