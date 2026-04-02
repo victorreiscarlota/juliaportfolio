@@ -53,8 +53,8 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors from the palette
-        salmon: "#BF897F",
+        salmon: "#7E6551",
+        "salmon-hover": "#476356",
         sandstone: "#DAC2B2",
         pearl: "#F7F2F0",
         "olive-slate": "#707B6D",

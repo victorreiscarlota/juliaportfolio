@@ -101,17 +101,13 @@ export default function Component() {
     <>
       <Preloader />
       <div className="min-h-screen bg-pearl dark:bg-dark-pearl font-serif transition-colors duration-300">
-        {/* Header */}
         <header
-          className={`fixed top-0 left-0 right-0 z-50 py-6 transition-transform duration-300 ${
-            isHeaderVisible ? "translate-y-0" : "-translate-y-full"
-          }`}
+          className={`fixed top-0 left-0 right-0 z-50 py-6 transition-transform duration-300 ${isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+            }`}
         >
           <div className="container mx-auto px-4">
-            <div className="flex justify-between items-center">
-              {/* Desktop Name / Mobile Hamburger */}
+            <div className="flex justify-between items-center relative">
               <div className="flex items-center">
-                {/* Desktop Name */}
                 <div
                   className="hidden md:block text-3xl font-light text-pewter dark:text-dark-pewter drop-shadow-sm transition-colors duration-300"
                   style={{ fontFamily: "Georgia, serif" }}
@@ -119,12 +115,10 @@ export default function Component() {
                   Júlia Penido
                 </div>
 
-                {/* Mobile Hamburger Menu */}
                 <MobileHamburgerMenu items={menuItems} />
               </div>
 
-              {/* Navigation Menu - Desktop Only */}
-              <div className="hidden md:block">
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
                 <Menu setActive={setActive}>
                   <MenuItem setActive={setActive} active={active} item="Sobre mim">
                     <div className="flex flex-col space-y-4 text-sm">
@@ -155,7 +149,7 @@ export default function Component() {
                 <ThemeToggle />
                 <Button
                   onClick={handleWhatsAppClick}
-                  className="bg-salmon hover:bg-salmon/90 dark:bg-dark-salmon dark:hover:bg-dark-salmon/90 text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 drop-shadow-sm"
+                  className="bg-salmon hover:bg-salmon-hover dark:bg-dark-salmon dark:hover:bg-salmon-hover text-white px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 drop-shadow-sm"
                 >
                   <MessageCircle className="w-5 h-5" />
                   <span className="hidden sm:inline">Agendar Consulta</span>
@@ -169,9 +163,8 @@ export default function Component() {
         <section ref={heroRef} id="hero" className="py-20 px-4 pt-32">
           <div className="container mx-auto text-center">
             <div
-              className={`transition-all duration-1000 transform ${
-                isVisible("hero") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-1000 transform ${isVisible("hero") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
               <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-sandstone dark:bg-dark-sandstone overflow-hidden shadow-lg transition-colors duration-300">
                 <Image
@@ -216,9 +209,8 @@ export default function Component() {
         >
           <div className="container mx-auto">
             <div
-              className={`transition-all duration-1000 delay-200 transform ${
-                isVisible("sobre") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-1000 delay-200 transform ${isVisible("sobre") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
               <h2
                 className="text-5xl font-light text-pewter dark:text-dark-pewter text-center mb-16 transition-colors duration-300"
@@ -229,9 +221,8 @@ export default function Component() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <div
-                    className={`transition-all duration-800 delay-400 transform ${
-                      isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-                    }`}
+                    className={`transition-all duration-800 delay-400 transform ${isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                      }`}
                   >
                     <p className="text-lg text-pewter/80 dark:text-dark-pewter/80 leading-relaxed transition-colors duration-300">
                       Formada pela{" "}
@@ -251,9 +242,8 @@ export default function Component() {
                   </div>
 
                   <div
-                    className={`transition-all duration-800 delay-600 transform ${
-                      isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-                    }`}
+                    className={`transition-all duration-800 delay-600 transform ${isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                      }`}
                   >
                     <p className="text-lg text-pewter/80 dark:text-dark-pewter/80 leading-relaxed transition-colors duration-300">
                       Acredito que cada pessoa possui recursos internos únicos para superar desafios. Meu papel é
@@ -270,9 +260,8 @@ export default function Component() {
                   </div>
 
                   <div
-                    className={`flex flex-wrap gap-6 transition-all duration-800 delay-800 transform ${
-                      isVisible("sobre") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-                    }`}
+                    className={`flex flex-wrap gap-6 transition-all duration-800 delay-800 transform ${isVisible("sobre") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                      }`}
                   >
                     <div className="flex items-center text-olive-slate dark:text-dark-olive-slate bg-white/50 dark:bg-dark-pearl/50 px-4 py-2 rounded-full transition-colors duration-300">
                       <Award className="w-5 h-5 mr-2" />
@@ -286,9 +275,8 @@ export default function Component() {
                 </div>
 
                 <div
-                  className={`space-y-4 transition-all duration-1000 delay-300 transform ${
-                    isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-                  }`}
+                  className={`space-y-4 transition-all duration-1000 delay-300 transform ${isVisible("sobre") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                    }`}
                 >
                   <div className="w-full h-64 bg-sandstone dark:bg-dark-sandstone rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                     <Image
@@ -329,9 +317,8 @@ export default function Component() {
         <section ref={servicesRef} id="atuacao" className="py-20 px-4">
           <div className="container mx-auto">
             <div
-              className={`transition-all duration-1000 delay-200 transform ${
-                isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-1000 delay-200 transform ${isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
               <h2
                 className="text-5xl font-light text-pewter dark:text-dark-pewter text-center mb-16 transition-colors duration-300"
@@ -341,11 +328,10 @@ export default function Component() {
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div
-                  className={`transition-all duration-800 delay-400 transform ${
-                    isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`transition-all duration-800 delay-400 transform ${isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 >
-                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon/30 dark:hover:border-dark-salmon/30 h-full">
+                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon-hover/30 dark:hover:border-salmon-hover/30 h-full">
                     <CardContent className="p-8 text-center">
                       <div className="w-16 h-16 bg-salmon/20 dark:bg-dark-salmon/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                         <Heart className="w-8 h-8 text-salmon dark:text-dark-salmon transition-colors duration-300" />
@@ -373,11 +359,10 @@ export default function Component() {
                 </div>
 
                 <div
-                  className={`transition-all duration-800 delay-600 transform ${
-                    isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`transition-all duration-800 delay-600 transform ${isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 >
-                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon/30 dark:hover:border-dark-salmon/30 h-full">
+                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon-hover/30 dark:hover:border-salmon-hover/30 h-full">
                     <CardContent className="p-8 text-center">
                       <div className="w-16 h-16 bg-olive-slate/20 dark:bg-dark-olive-slate/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                         <Users className="w-8 h-8 text-olive-slate dark:text-dark-olive-slate transition-colors duration-300" />
@@ -404,11 +389,10 @@ export default function Component() {
                 </div>
 
                 <div
-                  className={`transition-all duration-800 delay-800 transform ${
-                    isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                  }`}
+                  className={`transition-all duration-800 delay-800 transform ${isVisible("atuacao") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                    }`}
                 >
-                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon/30 dark:hover:border-dark-salmon/30 h-full">
+                  <Card className="bg-white dark:bg-dark-pearl border-sandstone dark:border-dark-sandstone hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-salmon-hover/30 dark:hover:border-salmon-hover/30 h-full">
                     <CardContent className="p-8 text-center">
                       <div className="w-16 h-16 bg-salmon/20 dark:bg-dark-salmon/20 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
                         <Award className="w-8 h-8 text-salmon dark:text-dark-salmon transition-colors duration-300" />
@@ -446,9 +430,8 @@ export default function Component() {
         >
           <div className="container mx-auto">
             <div
-              className={`transition-all duration-1000 delay-200 transform ${
-                isVisible("atendimento") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className={`transition-all duration-1000 delay-200 transform ${isVisible("atendimento") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
             >
               <h2
                 className="text-5xl font-light text-pewter dark:text-dark-pewter text-center mb-16 transition-colors duration-300"
@@ -458,9 +441,8 @@ export default function Component() {
               </h2>
               <div className="grid md:grid-cols-2 gap-12">
                 <div
-                  className={`transition-all duration-800 delay-400 transform ${
-                    isVisible("atendimento") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-                  }`}
+                  className={`transition-all duration-800 delay-400 transform ${isVisible("atendimento") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                    }`}
                 >
                   <h3
                     className="text-2xl font-medium text-pewter dark:text-dark-pewter mb-8 transition-colors duration-300"
@@ -524,7 +506,7 @@ export default function Component() {
                   <div className="mt-8">
                     <Button
                       onClick={handleWhatsAppClick}
-                      className="bg-salmon hover:bg-salmon/90 dark:bg-dark-salmon dark:hover:bg-dark-salmon/90 text-white px-8 py-4 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-salmon hover:bg-salmon-hover dark:bg-dark-salmon dark:hover:bg-salmon-hover text-white px-8 py-4 rounded-full flex items-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                     >
                       <MessageCircle className="w-6 h-6" />
                       <span className="text-lg">Agendar Consulta</span>
@@ -533,9 +515,8 @@ export default function Component() {
                 </div>
 
                 <div
-                  className={`space-y-4 transition-all duration-800 delay-600 transform ${
-                    isVisible("atendimento") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
-                  }`}
+                  className={`space-y-4 transition-all duration-800 delay-600 transform ${isVisible("atendimento") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+                    }`}
                 >
                   <div className="w-full h-64 bg-sandstone dark:bg-dark-sandstone rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
                     <Image
@@ -572,13 +553,11 @@ export default function Component() {
           </div>
         </section>
 
-        {/* Footer */}
         <footer className="py-12 px-4 bg-pewter dark:bg-dark-pewter text-white dark:text-dark-pearl transition-colors duration-300">
           <div className="container mx-auto text-center">
             <div
-              className={`transition-all duration-800 transform ${
-                isVisible("atendimento") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-              }`}
+              className={`transition-all duration-800 transform ${isVisible("atendimento") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                }`}
             >
               <p className="text-white/80 dark:text-dark-pearl/80 mb-4 transition-colors duration-300">
                 © 2024 Júlia Penido - Psicóloga Clínica
